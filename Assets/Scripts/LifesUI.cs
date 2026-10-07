@@ -12,9 +12,11 @@ public class LifesUI : MonoBehaviour
         UpdateUI(lifes.currLife);
     }
 
-    void changeHeartState( int indexState,  Image image)
+    void changeHeartState( int indexState,  int indexImage)
     {
-        image.sprite = statesHeart[indexState];
+        Debug.Log("INDEX STATE " +  indexState + 1+"INDEX IMAGE" + indexImage);
+        heartImages[indexImage].sprite = statesHeart[indexState  % 2  == 0? 2 : 1];
+        if(indexState + 1 == 1 && indexImage < 2) heartImages[indexImage + 1].sprite = statesHeart[0];
     }
 
     void OnDisable()
@@ -24,8 +26,13 @@ public class LifesUI : MonoBehaviour
 
     void UpdateUI(int value)
     {
-        //2,4,6
-        //1,2,3
+        //2,4,6 //corações cheios
+        //6 -> 0
+        //5 -> 1 
+        changeHeartState(value % 2  , Mathf.CeilToInt(value / 2f) - 1);
+        //1,2,3  //index objetos
+        //1,2|3,4|5,6
         Debug.Log("Vidas: " + value);
+        Debug.Log("Vidas dividida: " + Mathf.CeilToInt(value / 2f));
     }
 }

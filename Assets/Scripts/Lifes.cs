@@ -20,7 +20,6 @@ public class Lifes : MonoBehaviour
     {
         if (Dead) return;
         currLife = Mathf.Max(0, currLife - hit);
-        onChangeQuantLife?.Invoke(currLife);
-        if (currLife == 0) OnDead?.Invoke();
+        if (currLife == 0) OnDead?.Invoke(); else onChangeQuantLife?.Invoke(currLife);
     }
 }

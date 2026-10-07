@@ -1777,9 +1777,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   statesHeart:
-  - {fileID: 5491652103975585499, guid: 3a479900a05d5d442a4f8c63434d619d, type: 3}
-  - {fileID: 7271829884475791025, guid: 3a479900a05d5d442a4f8c63434d619d, type: 3}
   - {fileID: -6333243661565206645, guid: 3a479900a05d5d442a4f8c63434d619d, type: 3}
+  - {fileID: 7271829884475791025, guid: 3a479900a05d5d442a4f8c63434d619d, type: 3}
+  - {fileID: 5491652103975585499, guid: 3a479900a05d5d442a4f8c63434d619d, type: 3}
   lifes: {fileID: 439645902}
   heartImages:
   - {fileID: 888587815}
