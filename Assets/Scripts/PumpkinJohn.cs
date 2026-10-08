@@ -33,13 +33,6 @@ public class PumpkinJohn : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         if(horizontal != 0) {
             animator.SetBool("IsWalking", true);
-            if(horizontal < 0)
-            {
-                spriteRenderer.flipX = true;
-            } else
-            {
-                spriteRenderer.flipX = false;
-            }
         }else
         {
             animator.SetBool("IsWalking", false);
