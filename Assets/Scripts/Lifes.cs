@@ -1,14 +1,12 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 public class Lifes : MonoBehaviour
 {
     [SerializeField] private int maxLife = 6;
     public int currLife { get; private set; }
     public bool Dead => currLife <= 0;
     public event Action<int> onChangeQuantLife;
-    public event Action OnDamage;
-    public event Action OnDead;
-
     void Awake()
     {
         currLife = maxLife;
@@ -20,6 +18,10 @@ public class Lifes : MonoBehaviour
     {
         if (Dead) return;
         currLife = Mathf.Max(0, currLife - hit);
-        if (currLife == 0) OnDead?.Invoke(); else onChangeQuantLife?.Invoke(currLife);
+        if (currLife == 0){
+            SceneManager.LoadScene("GameOver");
+        }  else {
+            onChangeQuantLife?.Invoke(currLife);
+        }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PumpkinJohn : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PumpkinJohn : MonoBehaviour
     public bool isOnGround = true;
     private float horizontal = 0.0f;
     private bool makeJump = false;
+
+    private bool hasKey = false;
 
     void Awake()
     {
@@ -60,7 +63,17 @@ public class PumpkinJohn : MonoBehaviour
 
     void OnBecameInvisible()
     {
+         if (startPoint == null) return;
         lifes.TakeDamage();
         transform.position = startPoint.transform.position;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Key")){
+            hasKey = false;
+            collision.gameObject.SetActive(false);
+        }    
+        if(collision.gameObject.CompareTag("Door") && hasKey) SceneManager.LoadScene("GameOver");
     }
 }

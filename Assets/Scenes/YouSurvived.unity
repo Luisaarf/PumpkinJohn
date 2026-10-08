@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: You survived
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffdc8a11e37474544bfb10df899048c7, type: 2}
   m_sharedMaterial: {fileID: -6760535216701263300, guid: ffdc8a11e37474544bfb10df899048c7, type: 2}
@@ -843,8 +843,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 270
+  m_fontSizeBase: 270
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
